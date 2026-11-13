@@ -1,4 +1,4 @@
-# fabea/tap
+# fabea87/tap
 
 Personal Homebrew tap.
 
@@ -8,7 +8,7 @@ Personal Homebrew tap.
 same `getloc.php` redirect, and has no official cask — so this tap carries one:
 
 ```sh
-brew install fabea/tap/betterbird
+brew install fabea87/tap/betterbird
 brew upgrade --cask betterbird     # or just rely on `brew upgrade`
 ```
 
@@ -26,4 +26,4 @@ Mac builds are unsigned and un-notarised; the cask's `postflight_steps` strips
 
 ## Other casks
 
-`brew install fabea/tap/<cask>`
+`brew install fabea87/tap/<cask>`
