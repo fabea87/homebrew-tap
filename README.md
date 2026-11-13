@@ -1,18 +1,29 @@
-# Fabea Tap
+# fabea/tap
 
-## How do I install these formulae?
+Personal Homebrew tap.
 
-`brew install fabea/tap/<formula>`
+## betterbird
 
-Or `brew tap fabea/tap` and then `brew install <formula>`.
+[Betterbird](https://www.betterbird.eu/) ships no auto-updater, publishes every build behind the
+same `getloc.php` redirect, and has no official cask — so this tap carries one:
 
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "fabea/tap"
-brew "<formula>"
+```sh
+brew install fabea/tap/betterbird
+brew upgrade --cask betterbird     # or just rely on `brew upgrade`
 ```
 
-## Documentation
+`Casks/betterbird.rb` is generated, never hand-edited. `scripts/bump-betterbird.sh` resolves the
+current release, reads the published SHA-256 for both arch builds and rewrites the cask;
+`.github/workflows/bump.yml` runs it every 6 hours and commits when the version moves.
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```sh
+bash scripts/bump-betterbird.sh   # local, same script CI runs
+brew livecheck --cask betterbird  # compare cask vs upstream
+```
+
+Mac builds are unsigned and un-notarised; the cask's `postflight_steps` strips
+`com.apple.quarantine` so macOS does not report the app as damaged.
+
+## Other casks
+
+`brew install fabea/tap/<cask>`
