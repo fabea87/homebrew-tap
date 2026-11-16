@@ -12,6 +12,14 @@ cask "scriptorium" do
 
   app "Scriptorium.app"
 
+  # the build is not notarised yet; without this macOS quarantines and then
+  # refuses (and can remove) the app on first launch
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Scriptorium.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/.config/scriptorium",
     "~/.cache/scriptorium",
