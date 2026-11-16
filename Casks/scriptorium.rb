@@ -2,14 +2,13 @@ cask "scriptorium" do
   version "0.2.0"
   sha256 "24ed545ca0fa7276cd67b4934e145e100073bec45b9bade18fe4eab23c868ad7"
 
-  url "https://github.com/fabea87/scriptorium/releases/download/v#{version}/Scriptorium_#{version}_aarch64.dmg",
-      verified: "github.com/fabea87/scriptorium/"
+  url "https://github.com/fabea87/scriptorium/releases/download/v#{version}/Scriptorium_#{version}_aarch64.dmg"
   name "Scriptorium"
   desc "Local-first academic writing desk with Zotero citations and tracked revisions"
   homepage "https://github.com/fabea87/scriptorium"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Scriptorium.app"
 
