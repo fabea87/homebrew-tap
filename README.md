@@ -38,6 +38,12 @@ docx/PDF export — one Rust + Tauri 2 app, no server, no account.
 brew install --cask fabea87/tap/scriptorium
 ```
 
-Apple silicon, macOS 11+. The app is unsigned, so the first launch needs
-right-click → Open (or `xattr -dr com.apple.quarantine /Applications/Scriptorium.app`).
-Export needs `pandoc` and `academic-md`; citations need Zotero 7 with Better BibTeX.
+Apple silicon, macOS 11+. The cask clears the quarantine flag after install
+(the build is not notarised yet). Export needs `pandoc` and `academic-md`;
+citations need Zotero 7 with Better BibTeX.
+
+`Casks/scriptorium.rb` is bumped from the GitHub release:
+
+```sh
+bash scripts/bump-scriptorium.sh --push   # version + sha256 from the latest release
+```
