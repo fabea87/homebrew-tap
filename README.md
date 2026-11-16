@@ -27,3 +27,17 @@ Mac builds are unsigned and un-notarised; the cask's `postflight_steps` strips
 ## Other casks
 
 `brew install fabea87/tap/<cask>`
+
+## scriptorium
+
+[Scriptorium](https://github.com/fabea87/scriptorium) is a local-first academic
+writing desk: markdown, Zotero citations, Word-like tracked revisions, and
+docx/PDF export — one Rust + Tauri 2 app, no server, no account.
+
+```sh
+brew install --cask fabea87/tap/scriptorium
+```
+
+Apple silicon, macOS 11+. The app is unsigned, so the first launch needs
+right-click → Open (or `xattr -dr com.apple.quarantine /Applications/Scriptorium.app`).
+Export needs `pandoc` and `academic-md`; citations need Zotero 7 with Better BibTeX.
