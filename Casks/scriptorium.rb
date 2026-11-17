@@ -8,21 +8,20 @@ cask "scriptorium" do
   homepage "https://github.com/fabea87/scriptorium"
 
   depends_on arch: :arm64
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "Scriptorium.app"
 
   # the build is not notarised yet; without this macOS quarantines and then
   # refuses (and can remove) the app on first launch
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Scriptorium.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Scriptorium.app"]
   end
 
   zap trash: [
-    "~/.config/scriptorium",
     "~/.cache/scriptorium",
+    "~/.config/scriptorium",
     "~/.local/share/scriptorium",
   ]
 
