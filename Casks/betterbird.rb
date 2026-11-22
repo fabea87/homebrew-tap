@@ -1,7 +1,7 @@
 cask "betterbird" do
-  version "153.7.0,13"
-  sha256 arm:   "b5eacb2ba1c11b6e1b36c73898611246b0a7f38431a73dfbb4762116393a98d9",
-         intel: "bf7f0dc3658acd28376fec734017846b630887d6ff1ee3d0e2aa07b5e8b25268"
+  version "153.8.0,14"
+  sha256 arm:   "15fdb22870162602ba4ce792a27fe1002116e33a9f1b26679ef59dd875f9e3aa",
+         intel: "bfbf27818fe55a74a8889135678d04c5129cea1c06080b122757f95a16a7b592"
 
   on_arm do
     url "https://www.betterbird.eu/downloads/MacDiskImage/betterbird-#{version.csv.first}esr-bb#{version.csv.second}.en-US.mac-arm64.dmg"
